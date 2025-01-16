@@ -2,11 +2,7 @@ import {View, StyleSheet, ScrollView} from 'react-native';
 import {Component} from "react";
 import Bouton from "@/app/components/Bouton";
 import Title from "@/app/components/Title";
-/*
 import Grid from "@/app/components/Grid";
-*/
-
-const GRID_SIZE = 8;
 
 export default class Bejeweld extends Component {
     render() {
@@ -20,13 +16,13 @@ export default class Bejeweld extends Component {
                         style={{backgroundColor: 'grey'}}
                     />
                     <Bouton
-                        onPress={() => alert('Le Jeu Commence')}
+                        onPress={() => alert('Le meilleure score est :')}
                         title="Highest Score"
                         style={{backgroundColor: 'grey'}}
                     />
                 </View>
                 <View>
-                    {/*<Grid/>*/}
+                    <Grid/>
                 </View>
             </ScrollView>
         );
