@@ -1,21 +1,22 @@
 import React, {Component} from 'react';
-import {View, TouchableOpacity, Image} from 'react-native';
+import {View, TouchableOpacity, Image, ImageBackground} from 'react-native';
 import styles from "@/assets/theme/style";
-
 // Définition de la taille de la grille (8×8).
 const GRID_SIZE = 8;
 
 /* Tableau d'image, pour les joyaux de la grille */
 const IMAGES = [
-    require('@/assets/images/stones/diamond.png'),
-    require('@/assets/images/stones/emeraude.png'),
-    require('@/assets/images/stones/ruby.png'),
-    require('@/assets/images/stones/sapphire.png'),
-    require('@/assets/images/stones/ambre.png'),
-    require('@/assets/images/stones/citrine.png'),
-    require('@/assets/images/stones/amethyst.png'),
-    require('@/assets/images/stones/cristal.png'),
+    require('@/assets/images/stones/green.webp'),
+    require('@/assets/images/stones/red.webp'),
+    require('@/assets/images/stones/water.webp'),
+    require('@/assets/images/stones/white.webp'),
+    require('@/assets/images/stones/black.webp'),
+    require('@/assets/images/stones/incolor.png'),
+    require('@/assets/images/stones/chandra.png'),
+    require('@/assets/images/stones/nissa.png'),
 ];
+// @ts-ignore
+import background from '@/assets/images/kyler.png';
 
 /* Interface Gérant l'état initial de la grille.
 * grid pour la grille.
@@ -143,32 +144,34 @@ export default class Grid extends Component<{}, GridState> {
 
         return (
             <View style={styles.containerGrid}>
-                {grid.map((row, rowIndex) => (
-                    <View key={rowIndex} style={styles.grille}>
-                        {row.map((image, colIndex) => {
-                            const isSelected =
-                                selectedCase?.row === rowIndex &&
-                                selectedCase?.col === colIndex;
+                <ImageBackground source={background} resizeMode="cover" style={styles.image}>
+                    {grid.map((row, rowIndex) => (
+                        <View key={rowIndex} style={styles.grille}>
+                            {row.map((image, colIndex) => {
+                                const isSelected =
+                                    selectedCase?.row === rowIndex &&
+                                    selectedCase?.col === colIndex;
 
-                            return (
-                                <TouchableOpacity
-                                    key={colIndex}
-                                    style={[
-                                        styles.case,
-                                        isSelected && styles.selectedCase,
-                                    ]}
-                                    onPress={() => this.handleCasePress(rowIndex, colIndex)}
-                                >
-                                    <Image
-                                        source={image}
-                                        style={styles.imageGrid}
-                                        resizeMode="contain"
-                                    />
-                                </TouchableOpacity>
-                            );
-                        })}
-                    </View>
-                ))}
+                                return (
+                                    <TouchableOpacity
+                                        key={colIndex}
+                                        style={[
+                                            styles.case,
+                                            isSelected && styles.selectedCase,
+                                        ]}
+                                        onPress={() => this.handleCasePress(rowIndex, colIndex)}
+                                    >
+                                        <Image
+                                            source={image}
+                                            style={styles.imageGrid}
+                                            resizeMode="contain"
+                                        />
+                                    </TouchableOpacity>
+                                );
+                            })}
+                        </View>
+                    ))}
+                </ImageBackground>
             </View>
         );
     }

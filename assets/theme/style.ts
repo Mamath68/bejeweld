@@ -1,18 +1,22 @@
-import {StyleSheet} from "react-native";
+import {StyleSheet, Dimensions} from "react-native";
 
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     containerGrid: {
         justifyContent: 'center',
         alignItems: 'center',
         padding: 10,
-        backgroundColor: 'black'
+    },
+    image: {
+        justifyContent: 'center',
     },
     grille: {
         flexDirection: 'row',
     },
     case: {
-        width: 40,
-        height: 40,
+        width: (width <= 650 && height <= 800) ? 60 : (width >= 800 && height >= 650) ? 90 : 40,
+        height: (width <= 650 && height <= 800) ? 60 : (width >= 800 && height >= 650) ? 90 : 40,
         margin: 2,
         justifyContent: 'center',
         alignItems: 'center',
@@ -53,17 +57,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     contained: {
-        marginVertical: 30,
+        marginVertical: 20,
         display: 'flex',
         flexDirection: 'row',
-    },
-    title: {
-        paddingVertical: 10,
-        backgroundColor: 'black',
-        width: '100%',
-        marginBottom: 5,
-        color: 'white',
-        textAlign: 'center',
     },
     modalOverlay: {
         flex: 1,
@@ -95,6 +91,14 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'white',
         fontSize: 16,
+    },
+    titleContainer: {
+        alignItems: 'center',
+    },
+    headerTitle: {
+        color: '#fff',
+        fontWeight: 'bold',
+        fontSize: 30,
     },
 });
 
