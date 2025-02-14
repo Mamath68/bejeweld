@@ -1,15 +1,20 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, TouchableOpacity, Image} from 'react-native';
+import {View, TouchableOpacity, Image} from 'react-native';
+import styles from "@/assets/theme/style";
 
 // Définition de la taille de la grille (8×8).
 const GRID_SIZE = 8;
 
 /* Tableau d'image, pour les joyaux de la grille */
 const IMAGES = [
-    require('../../assets/images/diamond.png'),
-    require('../../assets/images/ruby.png'),
-    require('../../assets/images/emeraude.png'),
-    require('../../assets/images/sapphire.png'),
+    require('@/assets/images/stones/diamond.png'),
+    require('@/assets/images/stones/emeraude.png'),
+    require('@/assets/images/stones/ruby.png'),
+    require('@/assets/images/stones/sapphire.png'),
+    require('@/assets/images/stones/ambre.png'),
+    require('@/assets/images/stones/citrine.png'),
+    require('@/assets/images/stones/amethyst.png'),
+    require('@/assets/images/stones/cristal.png'),
 ];
 
 /* Interface Gérant l'état initial de la grille.
@@ -137,7 +142,7 @@ export default class Grid extends Component<{}, GridState> {
         const {grid, selectedCase} = this.state;
 
         return (
-            <View style={styles.container}>
+            <View style={styles.containerGrid}>
                 {grid.map((row, rowIndex) => (
                     <View key={rowIndex} style={styles.grille}>
                         {row.map((image, colIndex) => {
@@ -156,7 +161,7 @@ export default class Grid extends Component<{}, GridState> {
                                 >
                                     <Image
                                         source={image}
-                                        style={styles.image}
+                                        style={styles.imageGrid}
                                         resizeMode="contain"
                                     />
                                 </TouchableOpacity>
@@ -168,33 +173,3 @@ export default class Grid extends Component<{}, GridState> {
         );
     }
 }
-
-/*
-* Que dire de plus, c’est du css.
-* */
-const styles = StyleSheet.create({
-    container: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 10,
-        backgroundColor: 'black'
-    },
-    grille: {
-        flexDirection: 'row',
-    },
-    case: {
-        width: 40,
-        height: 40,
-        margin: 2,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    selectedCase: {
-        borderWidth: 2,
-        borderColor: 'white',
-    },
-    image: {
-        width: '100%',
-        height: '100%',
-    },
-});

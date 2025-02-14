@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { TextInput, StyleSheet, View, ViewStyle, TextStyle, KeyboardTypeOptions } from 'react-native';
+import { TextInput, View, ViewStyle, TextStyle, KeyboardTypeOptions } from 'react-native';
+import styles from "@/assets/theme/style";
 
 interface InputProps {
     placeholder: string;
@@ -34,16 +35,3 @@ export default class Input extends Component<InputProps> {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        marginBottom: 15,
-    },
-    input: {
-        height: 40,
-        borderColor: 'gray',
-        borderWidth: 1,
-        paddingLeft: 10,
-        borderRadius: 5,
-    },
-});

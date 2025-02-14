@@ -1,22 +1,52 @@
-import {View, StyleSheet, ScrollView} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import {Component} from "react";
 import Bouton from "@/app/components/Bouton";
-import Title from "@/app/components/Title";
 import Grid from "@/app/components/Grid";
+import styles from "@/assets/theme/style";
+import Alert from "@/app/components/Alert";
 
-export default class Bejeweld extends Component {
+interface BejeweldProps {
+}
+
+interface BejeweldState {
+    alertVisible1: boolean;
+    alertVisible2: boolean;
+}
+
+export default class Bejeweld extends Component<BejeweldProps, BejeweldState> {
+    constructor(props: BejeweldProps) {
+        super(props);
+        this.state = {
+            alertVisible1: false,
+            alertVisible2: false,
+        };
+    }
+
+    showAlert1 = () => {
+        this.setState({alertVisible1: true});
+    };
+    showAlert2 = () => {
+        this.setState({alertVisible2: true});
+    };
+
+    closeAlert1 = () => {
+        this.setState({alertVisible1: false});
+    };
+    closeAlert2 = () => {
+        this.setState({alertVisible2: false});
+    };
+
     render() {
         return (
-            <ScrollView contentContainerStyle={styles.container}>
-                <Title title="BEJEWELD" textStyle={styles.title} style={styles.title}/>
+            <ScrollView contentContainerStyle={styles.containerHome}>
                 <View style={styles.contained}>
                     <Bouton
-                        onPress={() => alert('Le Jeu Commence')}
+                        onPress={this.showAlert1}
                         title="New Game"
                         style={{backgroundColor: 'grey'}}
                     />
                     <Bouton
-                        onPress={() => alert('Le meilleure score est :')}
+                        onPress={this.showAlert2}
                         title="Highest Score"
                         style={{backgroundColor: 'grey'}}
                     />
@@ -24,27 +54,19 @@ export default class Bejeweld extends Component {
                 <View>
                     <Grid/>
                 </View>
+                <Alert
+                    visible={this.state.alertVisible1}
+                    title="Nouveau Jeu"
+                    message="Commençon un nouveau jeux"
+                    onClose={this.closeAlert1}
+                />
+                <Alert
+                    visible={this.state.alertVisible2}
+                    title="Meilleurs Scores"
+                    message="Voici les meilleurs Scores"
+                    onClose={this.closeAlert2}
+                />
             </ScrollView>
         );
     }
 }
-const styles = StyleSheet.create({
-    container: {
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    contained: {
-        marginVertical: 10,
-        display: 'flex',
-        flexDirection: 'row',
-    },
-    title: {
-        paddingVertical: 10,
-        backgroundColor: 'black',
-        width: '100%',
-        marginBottom: 5,
-        color: 'white',
-        textAlign: 'center',
-    }
-
-})

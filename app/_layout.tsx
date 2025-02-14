@@ -10,9 +10,19 @@ export default function RootLayout() {
     return (
         <GestureHandlerRootView>
             <Stack.Navigator screenOptions={{
-                headerShown: false,
+                headerStyle: {
+                    backgroundColor: 'black',
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                    fontSize: 20
+                },
+                headerTitleAlign: "center"
             }} initialRouteName="Home">
-                <Stack.Screen name="Home" component={Bejeweld}/>
+                <Stack.Screen name="Home" component={Bejeweld} options={{
+                    title: "BEJEWELD"
+                }}/>
             </Stack.Navigator>
         </GestureHandlerRootView>
     );
