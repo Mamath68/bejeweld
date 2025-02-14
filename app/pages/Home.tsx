@@ -51,7 +51,7 @@ export default class Bejeweld extends Component<BejeweldProps, BejeweldState> {
                         style={{backgroundColor: 'grey'}}
                     />
                 </View>
-                <View>
+                <View style={{marginTop: 50}}>
                     <Grid/>
                 </View>
                 <Alert

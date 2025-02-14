@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     contained: {
-        marginVertical: 10,
+        marginVertical: 30,
         display: 'flex',
         flexDirection: 'row',
     },

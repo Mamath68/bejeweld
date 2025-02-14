@@ -16,7 +16,7 @@ export default function RootLayout() {
                 headerTintColor: '#fff',
                 headerTitleStyle: {
                     fontWeight: 'bold',
-                    fontSize: 20
+                    fontSize: 30
                 },
                 headerTitleAlign: "center"
             }} initialRouteName="Home">
