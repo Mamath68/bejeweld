@@ -1,72 +1,49 @@
-import {View, ScrollView} from 'react-native';
-import {Component} from "react";
-import Bouton from "@/app/components/Bouton";
-import Grid from "@/app/components/Grid";
-import styles from "@/assets/theme/style";
-import Alert from "@/app/components/Alert";
+import {useState} from 'react';
+import {ScrollView, View} from 'react-native';
+import {Alert, Bouton, Grid} from "@/components";
+import {CommonStyles as styles} from "@/theme";
 
-interface BejeweldProps {
-}
+const Bejeweld = () => {
+    const [alertVisible1, setAlertVisible1] = useState(false);
+    const [alertVisible2, setAlertVisible2] = useState(false);
 
-interface BejeweldState {
-    alertVisible1: boolean;
-    alertVisible2: boolean;
-}
+    const showAlert1 = () => setAlertVisible1(true);
+    const showAlert2 = () => setAlertVisible2(true);
 
-export default class Bejeweld extends Component<BejeweldProps, BejeweldState> {
-    constructor(props: BejeweldProps) {
-        super(props);
-        this.state = {
-            alertVisible1: false,
-            alertVisible2: false,
-        };
-    }
+    const closeAlert1 = () => setAlertVisible1(false);
+    const closeAlert2 = () => setAlertVisible2(false);
 
-    showAlert1 = () => {
-        this.setState({alertVisible1: true});
-    };
-    showAlert2 = () => {
-        this.setState({alertVisible2: true});
-    };
-
-    closeAlert1 = () => {
-        this.setState({alertVisible1: false});
-    };
-    closeAlert2 = () => {
-        this.setState({alertVisible2: false});
-    };
-
-    render() {
-        return (
-            <ScrollView contentContainerStyle={styles.containerHome}>
-                <View style={styles.contained}>
-                    <Bouton
-                        onPress={this.showAlert1}
-                        title="New Game"
-                        style={{backgroundColor: 'grey'}}
-                    />
-                    <Bouton
-                        onPress={this.showAlert2}
-                        title="Highest Score"
-                        style={{backgroundColor: 'grey'}}
-                    />
-                </View>
-                <View style={{marginTop: 25}}>
-                    <Grid/>
-                </View>
-                <Alert
-                    visible={this.state.alertVisible1}
-                    title="Nouveau Jeu"
-                    message="Commençon un nouveau jeux"
-                    onClose={this.closeAlert1}
+    return (
+        <ScrollView contentContainerStyle={styles.containerHome}>
+            <View style={styles.contained}>
+                <Bouton
+                    onPress={showAlert1}
+                    title="New Game"
+                    style={{backgroundColor: 'grey'}}
                 />
-                <Alert
-                    visible={this.state.alertVisible2}
-                    title="Meilleurs Scores"
-                    message="Voici les meilleurs Scores"
-                    onClose={this.closeAlert2}
+                <Bouton
+                    onPress={showAlert2}
+                    title="Highest Score"
+                    style={{backgroundColor: 'grey'}}
                 />
-            </ScrollView>
-        );
-    }
-}
+            </View>
+            <View style={{marginTop: 25}}>
+                <Grid/>
+            </View>
+            <Alert
+                visible={alertVisible1}
+                title="Nouveau Jeu"
+                message="Commençons un nouveau jeu"
+                onClose={closeAlert1}
+            />
+            <Alert
+                visible={alertVisible2}
+                title="Meilleurs Scores"
+                message="Voici les meilleurs scores"
+                onClose={closeAlert2}
+            />
+        </ScrollView>
+    );
+};
+
+export default Bejeweld;

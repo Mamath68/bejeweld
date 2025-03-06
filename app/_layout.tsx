@@ -2,7 +2,7 @@ import React from 'react';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Bejeweld from "./pages/Home";
-import HeaderTitle from "@/app/components/HeaderTitle";
+import {HeaderTitle} from "@/app/components/HeaderTitle";
 
 
 const Stack = createNativeStackNavigator();

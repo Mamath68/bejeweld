@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {Modal, View, Text, TouchableOpacity} from 'react-native';
-import styles from "@/assets/theme/style";
+import {FC} from 'react';
+import {Modal, Text, TouchableOpacity, View} from 'react-native';
+import {AlertStyles as styles} from "@/theme";
 
 interface ModalProps {
     visible: boolean;
@@ -9,29 +9,22 @@ interface ModalProps {
     onClose: () => void;
 }
 
-export default class Alert extends Component<ModalProps> {
-    constructor(props: ModalProps) {
-        super(props);
-    }
-
-    render() {
-        const {visible, title, message, onClose} = this.props;
-        return (
-            <Modal
-                transparent={true}
-                animationType="slide"
-                visible={visible}
-            >
-                <View style={styles.modalOverlay}>
-                    <View style={styles.modalContainer}>
-                        <Text style={styles.title}>{title}</Text>
-                        <Text style={styles.message}>{message}</Text>
-                        <TouchableOpacity onPress={onClose} style={styles.button}>
-                            <Text style={styles.buttonText}>OK</Text>
-                        </TouchableOpacity>
-                    </View>
+export const Alert: FC<ModalProps> = ({visible, title, message, onClose}) => {
+    return (
+        <Modal
+            transparent={true}
+            animationType="slide"
+            visible={visible}
+        >
+            <View style={styles.modalOverlay}>
+                <View style={styles.modalContainer}>
+                    <Text style={styles.modalTitle}>{title}</Text>
+                    <Text style={styles.message}>{message}</Text>
+                    <TouchableOpacity onPress={onClose} style={styles.button}>
+                        <Text style={styles.buttonText}>OK</Text>
+                    </TouchableOpacity>
                 </View>
-            </Modal>
-        );
-    }
-}
+            </View>
+        </Modal>
+    );
+};

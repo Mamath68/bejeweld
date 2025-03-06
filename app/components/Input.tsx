@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { TextInput, View, ViewStyle, TextStyle, KeyboardTypeOptions } from 'react-native';
-import styles from "@/assets/theme/style";
+import {FC} from 'react';
+import {KeyboardTypeOptions, TextInput, TextStyle, View, ViewStyle} from 'react-native';
+import {InputStyles as styles} from "@/theme";
 
 interface InputProps {
     placeholder: string;
@@ -14,24 +14,25 @@ interface InputProps {
     keyboardType?: KeyboardTypeOptions;
 }
 
-export default class Input extends Component<InputProps> {
-    constructor(props: InputProps) {
-        super(props);
-    }
-
-    render() {
-        const { placeholder, value, onChangeText, style, inputStyle, secureTextEntry, keyboardType } = this.props;
-        return (
-            <View style={[styles.container, style]}>
-                <TextInput
-                    style={[styles.input, inputStyle]}
-                    placeholder={placeholder}
-                    value={value}
-                    onChangeText={onChangeText}
-                    secureTextEntry={secureTextEntry}
-                    keyboardType={keyboardType}
-                />
-            </View>
-        );
-    }
-}
+export const Input: FC<InputProps> = ({
+                                          placeholder,
+                                          value,
+                                          onChangeText,
+                                          style,
+                                          inputStyle,
+                                          secureTextEntry,
+                                          keyboardType
+                                      }) => {
+    return (
+        <View style={[styles.container, style]}>
+            <TextInput
+                style={[styles.input, inputStyle]}
+                placeholder={placeholder}
+                value={value}
+                onChangeText={onChangeText}
+                secureTextEntry={secureTextEntry}
+                keyboardType={keyboardType}
+            />
+        </View>
+    );
+};

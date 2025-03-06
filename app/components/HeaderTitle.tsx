@@ -1,8 +1,7 @@
-import React from 'react';
 import {Text, View} from 'react-native';
-import styles from "@/assets/theme/style";
+import {HeaderTitleStyles as styles} from "@/theme";
 
-const HeaderTitle = () => {
+export const HeaderTitle = () => {
     return (
         <View style={styles.titleContainer}>
             <Text style={styles.headerTitle}>MAGIWELD</Text>
@@ -10,5 +9,3 @@ const HeaderTitle = () => {
         </View>
     );
 };
-
-export default HeaderTitle;

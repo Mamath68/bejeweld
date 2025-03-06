@@ -1,6 +1,6 @@
-import {Component} from 'react';
-import {TouchableOpacity, Text, ViewStyle, TextStyle} from 'react-native';
-import styles from "@/assets/theme/style";
+import {FC} from 'react';
+import {Text, TextStyle, TouchableOpacity, ViewStyle} from 'react-native';
+import {ButtonStyles as styles} from "@/theme";
 
 interface BoutonProps {
     onPress: () => void;
@@ -9,17 +9,10 @@ interface BoutonProps {
     textStyle?: TextStyle;
 }
 
-export default class Bouton extends Component<BoutonProps> {
-    constructor(props: BoutonProps) {
-        super(props);
-    }
-
-    render() {
-        const {onPress, title, style, textStyle} = this.props;
-        return (
-            <TouchableOpacity onPress={onPress} style={[styles.button, style]}>
-                <Text style={[styles.text, textStyle]}>{title}</Text>
-            </TouchableOpacity>
-        );
-    }
-}
+export const Bouton: FC<BoutonProps> = ({onPress, title, style, textStyle}) => {
+    return (
+        <TouchableOpacity onPress={onPress} style={[styles.button, style]}>
+            <Text style={[styles.text, textStyle]}>{title}</Text>
+        </TouchableOpacity>
+    );
+};
