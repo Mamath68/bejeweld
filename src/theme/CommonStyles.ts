@@ -1,11 +1,11 @@
 import {StyleSheet} from "react-native";
 
 export const CommonStyles = StyleSheet.create({
-    containerHome: {
+    container: {
         justifyContent: 'center',
         alignItems: 'center',
     },
-    contained: {
+    gameContainer: {
         marginVertical: 20,
         display: 'flex',
         flexDirection: 'row',

@@ -4,43 +4,43 @@ import {Alert, Bouton, Grid} from "@/components";
 import {CommonStyles as styles} from "@/theme";
 
 const Bejeweld = () => {
-    const [alertVisible1, setAlertVisible1] = useState(false);
-    const [alertVisible2, setAlertVisible2] = useState(false);
+    const [newGame, setNewGame] = useState(false);
+    const [bestScore, setBestScore] = useState(false);
 
-    const showAlert1 = () => setAlertVisible1(true);
-    const showAlert2 = () => setAlertVisible2(true);
+    const showNewGame = () => setNewGame(true);
+    const showBestScore = () => setBestScore(true);
 
-    const closeAlert1 = () => setAlertVisible1(false);
-    const closeAlert2 = () => setAlertVisible2(false);
+    const closeNewGame = () => setNewGame(false);
+    const closeBestScore = () => setBestScore(false);
 
     return (
-        <ScrollView contentContainerStyle={styles.containerHome}>
-            <View style={styles.contained}>
+        <ScrollView contentContainerStyle={styles.container}>
+            <View style={styles.gameContainer}>
                 <Bouton
-                    onPress={showAlert1}
+                    onPress={showNewGame}
                     title="New Game"
                     style={{backgroundColor: 'grey'}}
                 />
                 <Bouton
-                    onPress={showAlert2}
+                    onPress={showBestScore}
                     title="Highest Score"
                     style={{backgroundColor: 'grey'}}
                 />
             </View>
-            <View style={{marginTop: 25}}>
+            <View style={{marginVertical: 20}}>
                 <Grid/>
             </View>
             <Alert
-                visible={alertVisible1}
+                visible={newGame}
                 title="Nouveau Jeu"
                 message="Commençons un nouveau jeu"
-                onClose={closeAlert1}
+                onClose={closeNewGame}
             />
             <Alert
-                visible={alertVisible2}
+                visible={bestScore}
                 title="Meilleurs Scores"
                 message="Voici les meilleurs scores"
-                onClose={closeAlert2}
+                onClose={closeBestScore}
             />
         </ScrollView>
     );

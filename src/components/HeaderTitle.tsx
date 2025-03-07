@@ -3,9 +3,9 @@ import {HeaderTitleStyles as styles} from "@/theme";
 
 export const HeaderTitle = () => {
     return (
-        <View style={styles.titleContainer}>
-            <Text style={styles.headerTitle}>MAGIWELD</Text>
-            <Text style={styles.headerTitle}>THE CRUSHERING</Text>
+        <View style={styles.container}>
+            <Text style={styles.title}>MAGIWELD</Text>
+            <Text style={styles.title}>THE CRUSHERING</Text>
         </View>
     );
 };

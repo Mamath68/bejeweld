@@ -1,10 +1,10 @@
 import {StyleSheet} from "react-native";
 
 export const HeaderTitleStyles = StyleSheet.create({
-    titleContainer: {
+    container: {
         alignItems: 'center',
     },
-    headerTitle: {
+    title: {
         color: '#fff',
         fontWeight: 'bold',
         fontSize: 30,

@@ -4,7 +4,7 @@ export const GridStyles = StyleSheet.create({
     image: {
         justifyContent: 'center',
     },
-    containerGrid: {
+    container: {
         justifyContent: 'center',
         alignItems: 'center',
         padding: 10,

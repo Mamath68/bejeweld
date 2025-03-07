@@ -14,7 +14,7 @@ export const GridCellStyles = StyleSheet.create({
         borderWidth: 2,
         borderColor: 'white',
     },
-    imageGrid: {
+    image: {
         width: '100%',
         height: '100%',
     }
