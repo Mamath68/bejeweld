@@ -14,8 +14,7 @@ export const GridCell: FC<GridCellProps> = ({image, row, col, selectedCase, onCa
     const isSelected = selectedCase?.row === row && selectedCase?.col === col;
 
     return (
-        <TouchableOpacity style={[styles.case, isSelected && styles.selectedCase]}
-                          onPress={() => onCasePress(row, col)}>
+        <TouchableOpacity style={[styles.case, isSelected && styles.selectedCase]} onPress={() => onCasePress(row, col)}>
             <Image source={image} style={styles.imageGrid} resizeMode="contain"/>
         </TouchableOpacity>
     );

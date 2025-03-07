@@ -4,7 +4,6 @@ import Bejeweld from "@/src/screens/Home";
 import {HeaderTitle} from "@/src/components/HeaderTitle";
 import {NavigationContainer} from "@react-navigation/native";
 
-
 const Stack = createNativeStackNavigator();
 
 export default function App() {
