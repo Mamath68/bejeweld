@@ -12,17 +12,17 @@ export const IMAGES = [
     require("@/assets/img/nissa.png"),
 ];
 
-/*
-   * Crée un tableau 8×8 avec `Array.from`, où chaque case est remplie par une image aléatoire du tableau `IMAGES` grâce à `Math.random`.
-   * Détail :
-   * Array.from : génère un tableau d'une taille donnée. Utilisé pour créer la grille vide.
-   * Math.random : génère un nombre aléatoire pour choisir une image. Utilisé dans la boucle `do...while`.
-   * Math.floor : arrondit un nombre à l'entier inférieur. Utilisé pour obtenir un index valide dans `IMAGES`.
-   * fill : méthode qui remplit tous les éléments d'un tableau avec une valeur statique. Utilisé pour initialiser la grille vide.
-   * length : propriété qui définit ou retourne le nombre d'éléments dans un tableau. Utilisé pour définir la taille de la grille.
-   * do...while : boucle qui exécute le bloc de code au moins une fois, puis continue tant que la condition est vraie. Utilisée pour réessayer de choisir une image différente si une combinaison de 3 images identiques est détectée.
-   * for : boucle qui permet d'exécuter un bloc de code un nombre fixe de fois. Utilisée pour parcourir chaque case de la grille.
-   */
+/**
+ * Crée un tableau 8×8 avec `Array.from`, où chaque case est remplie par une image aléatoire du tableau `IMAGES` grâce à `Math.random`. <br/>
+ * Détail : <br/>
+ * Array.from : génère un tableau d'une taille donnée. Utilisé pour créer la grille vide. <br/>
+ * Math.random : génère un nombre aléatoire pour choisir une image. Utilisé dans la boucle `do...while`. <br/>
+ * Math.floor : arrondit un nombre à l'entier inférieur. Utilisé pour obtenir un index valide dans `IMAGES`. <br/>
+ * fill : méthode qui remplit tous les éléments d'un tableau avec une valeur statique. Utilisé pour initialiser la grille vide. <br/>
+ * length : propriété qui définit ou retourne le nombre d'éléments dans un tableau. Utilisé pour définir la taille de la grille. <br/>
+ * do...while : boucle qui exécute le bloc de code au moins une fois, puis continue tant que la condition est vraie. Utilisée pour réessayer de choisir une image différente si une combinaison de 3 images identiques est détectée. <br/>
+ * for : boucle qui permet d'exécuter un bloc de code un nombre fixe de fois. Utilisée pour parcourir chaque case de la grille.
+ **/
 export const generateGrid = (): any[][] => {
     const grid: any[][] = Array.from({length: GRID_SIZE}, () => Array(GRID_SIZE).fill(null));
 

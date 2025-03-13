@@ -20,7 +20,7 @@ export const GridCell: FC<GridCellProps> = ({image, row, col, selectedCase, onCa
             style={[styles.case, isSelected && styles.selectedCase]} // Appliquer un style supplémentaire si la case est sélectionnée
             onPress={() => onCasePress(row, col)} // Appeler onCasePress avec les indices de la case lorsque la case est pressée
         >
-            <Image source={image} style={styles.image} resizeMode="contain"/> {/* Afficher l'image de la case */}
+            <Image source={image} style={styles.image} resizeMode="contain" /*afficher l'image de la case*/ />
         </TouchableOpacity>
     );
 };
