@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3c2f5512-d809-43e3-a749-118a2507daaa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/functions/Button.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/functions/ProgressBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/functions/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/game/Grid.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/game/Timer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/game/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screens/HomeScreen.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screens/MagiweldScreen.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screens/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme/BtnStyles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme/HomeScreenStyles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/theme/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Alert.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Bouton.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Grid.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GridCell.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GridRow.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HeaderTitle.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/Home.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/theme/AlertStyles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/theme/ButtonStyles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/theme/CommonStyles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/theme/GridCellStyles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/theme/GridRowStyles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/theme/GridStyles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/theme/HeaderTitleStyles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/theme/InputStyles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/theme/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/GridUtils.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JSX File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Mamath68&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Mamath68/bejeweld.git&quot;,
+    &quot;accountId&quot;: &quot;a5934413-4fb1-4ba9-815f-8f4b4088c9e8&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2tysIHFpOq0Mzy3YVCBGTp3RFfO" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.index.ts.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;new-version&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mathi/WebstormProjects/Serfa/expo/bejeweld&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\mathi\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mathi\WebstormProjects\Serfa\expo\bejeweld" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mathi\WebstormProjects\Serfa\expo\bejeweld" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.26053.12" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3c2f5512-d809-43e3-a749-118a2507daaa" name="Changes" comment="" />
+      <created>1741335567084</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741335567084</updated>
+      <workItem from="1741335568543" duration="182000" />
+      <workItem from="1741335779776" duration="2181000" />
+      <workItem from="1741338023366" duration="12139000" />
+      <workItem from="1741854109195" duration="203000" />
+      <workItem from="1742213015427" duration="4456000" />
+      <workItem from="1742217544313" duration="599000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
