@@ -1,24 +1,20 @@
-import {GestureHandlerRootView} from 'react-native-gesture-handler';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Bejeweld from "@/src/screens/Home";
-import {HeaderTitle} from "@/src/components/HeaderTitle";
-import {NavigationContainer} from "@react-navigation/native";
-
-const Stack = createNativeStackNavigator();
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
-    return (
-        <GestureHandlerRootView>
-            <NavigationContainer>
-                <Stack.Navigator screenOptions={{
-                    headerStyle: {
-                        backgroundColor: 'black',
-                    },
-                    headerTitle: () => <HeaderTitle/>, // Composant pour customiser le HeaderTitle.
-                }} initialRouteName="Home">
-                    <Stack.Screen name="Home" component={Bejeweld}/>
-                </Stack.Navigator>
-            </NavigationContainer>
-        </GestureHandlerRootView>
-    );
+  return (
+    <View style={styles.container}>
+      <Text>Open up App.tsx to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
