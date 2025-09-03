@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Bejeweld from "@/src/screens/Bejeweld";
+import { Header } from "@/src/components/Header";
+import { NavigationContainer } from "@react-navigation/native";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <GestureHandlerRootView>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{
+          headerStyle: {
+            backgroundColor: 'black',
+          },
+          headerTitle: () => <Header />, // Composant pour customiser le HeaderTitle.
+        }} initialRouteName="Home">
+          <Stack.Screen name="Home" component={Bejeweld} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
