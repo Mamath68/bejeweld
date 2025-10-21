@@ -1,52 +1,54 @@
-import {useState} from "react";
-import {ImageBackground, View} from "react-native";
-import {GridStyles as styles} from "@/theme";
-import {generateGrid, GRID_SIZE, IMAGES} from "@/utils/GridUtils";
-import {GridRow} from "./GridRow";
+import { useState } from "react";
+import { ImageBackground, View } from "react-native";
+import { GridStyles as styles } from "@/theme";
+import { generateGrid, GRID_SIZE, IMAGES } from "@/utils/GridUtils";
+import { GridRow } from "./GridRow";
 
 export const Grid = () => {
     const background = require("@/assets/img/kyler.png"); // L’image de fond de la grille
     const [grid, setGrid] = useState(generateGrid()); // useState représentant le grille, initialisée avec la fonction generateGrid.
     const [selectedCase, setSelectedCase] = useState<{ row: number; col: number } | null>(null); // useState représentant une case séléctionné. par défaut, y'en as pas.
 
-    // Fonction appelée lorsqu’une case de la grille est pressée
-    const handleCasePress = (row: number, col: number) => {
-        if (selectedCase) {
-            const {row: selectedRow, col: selectedCol} = selectedCase;
-            // Vérifie si la case sélectionnée est à côté d'une autre
-            const isAdjacent =
-                (Math.abs(selectedRow - row) === 1 && selectedCol === col) ||
-                (Math.abs(selectedCol - col) === 1 && selectedRow === row);
+    const handleCaseSwipe = (row: number, col: number, direction: "up" | "down" | "left" | "right") => {
+        let targetRow = row;
+        let targetCol = col;
 
-            if (isAdjacent) {
-                // Si elles le sont, elles s’échangent, sinon, tant pis
-                switchCase(selectedRow, selectedCol, row, col);
-            } else {
-                // Si elles le sont pas, elles reviennent à leurs places d'origine.
-                setSelectedCase(null);
-            }
-        } else {
-            // Si aucune case n’est sélectionnée, ça en sélectionner une
-            setSelectedCase({row, col});
-        }
+        if (direction === "up" && row > 0) targetRow--;
+        else if (direction === "down" && row < GRID_SIZE - 1) targetRow++;
+        else if (direction === "left" && col > 0) targetCol--;
+        else if (direction === "right" && col < GRID_SIZE - 1) targetCol++;
+
+        switchCase(row, col, targetRow, targetCol);
     };
+
+    const animateSwap = (row1: number, col1: number, row2: number, col2: number) => {
+        // Tu peux ajuster cette fonction si tu veux des effets plus complexes
+        return new Promise<void>((resolve) => setTimeout(resolve, 200));
+    };
+
 
     // Fonction qui échange 2 cases.
-    const switchCase = (row1: number, col1: number, row2: number, col2: number) => {
-        const newGrid = grid.map((r) => [...r]); // Créer une copie de la grille
-        [newGrid[row1][col1], newGrid[row2][col2]] = [newGrid[row2][col2], newGrid[row1][col1]]; // Échanger les cases
+    const switchCase = async (row1: number, col1: number, row2: number, col2: number) => {
+        await animateSwap(row1, col1, row2, col2);
 
-        if (checkAlignement(newGrid)) {
-            setGrid(newGrid); // Vérifie si les cases sont côte à côte, et si c’est le cas, ça échange les cases.
-            setTimeout(() => resolveAlignement(newGrid), 300); // après 300 ms, ça échange, si c’est possible.
+        const newGrid = grid.map((r) => [...r]);
+        [newGrid[row1][col1], newGrid[row2][col2]] = [newGrid[row2][col2], newGrid[row1][col1]];
+
+        const aligner = checkAlignement(newGrid);
+        const hasAlignement = aligner.some(row => row.includes(true));
+
+        if (hasAlignement) {
+            setGrid(newGrid);
+            setTimeout(() => resolveAlignement(newGrid), 300);
         } else {
-            setSelectedCase(null); // Remets tout en place si impossible de switcher.
+            setSelectedCase(null);
         }
     };
+
 
     // Fonction pour vérifier si 3 images identiques sont alignées
     const checkAlignement = (grid: any[][]): boolean[][] => {
-        const aligner = Array.from({length: GRID_SIZE}, () => Array(GRID_SIZE).fill(false)); // Tableau qui suit les cases qui s’assemblent.
+        const aligner = Array.from({ length: GRID_SIZE }, () => Array(GRID_SIZE).fill(false)); // Tableau qui suit les cases qui s’assemblent.
 
         for (let row = 0; row < GRID_SIZE; row++) {
             for (let col = 0; col < GRID_SIZE; col++) {
@@ -112,8 +114,13 @@ export const Grid = () => {
         <View style={styles.container}>
             <ImageBackground source={background} resizeMode="cover" style={styles.image}>
                 {grid.map((row, rowIndex) => (
-                    <GridRow key={rowIndex} row={row} rowIndex={rowIndex} selectedCase={selectedCase}
-                             onCasePress={handleCasePress}/>
+                    <GridRow
+                        key={rowIndex}
+                        row={row}
+                        rowIndex={rowIndex}
+                        selectedCase={selectedCase}
+                        onCaseSwipe={handleCaseSwipe} // 👈 ajout ici
+                    />
                 ))}
             </ImageBackground>
         </View>
